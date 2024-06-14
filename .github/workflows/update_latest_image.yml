@@ -1,0 +1,23 @@
+name: Update Latest Image
+
+on:
+  push:
+    paths:
+      - 'image_*.jpg'
+
+jobs:
+  update_latest_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update Latest Image
+        run: |
+          LATEST_IMG=$(ls -Art image_*.jpg | tail -n 1)
+          cp $LATEST_IMG image_latest.jpg
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add image_latest.jpg
+          git commit -m "Update latest image"
+          git push
