@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Update Latest Image
         run: |
           LATEST_IMG=$(ls -Art image_*.jpg | tail -n 1)
