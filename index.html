@@ -9,7 +9,7 @@
             const img = document.getElementById('camera-image');
             img.src = img.src.split('?')[0] + '?' + new Date().getTime();
         }
-        setInterval(updateImage, 28800000); // 8時間ごとに画像を更新
+        setInterval(updateImage, 10000); // 8時間ごとに画像を更新
     </script>
 </head>
 <body>
