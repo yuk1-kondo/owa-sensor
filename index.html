@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Camera Image</title>
+    <title>今日の桜和村</title>
     <script>
         function updateImage() {
             const img = document.getElementById('camera-image');
             img.src = img.src.split('?')[0] + '?' + new Date().getTime();
         }
-        setInterval(updateImage, 10000); // 8時間ごとに画像を更新
+        setInterval(updateImage, 10000); // 10秒ごとに画像を更新
     </script>
+    <style>
+        h1 {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Latest Camera Image</h1>
+    <h1>今日の桜和村</h1>
     <img id="camera-image" src="image_latest.jpg" alt="Camera Image" style="width:100%; height:auto;">
 </body>
 </html>
